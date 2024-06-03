@@ -91,3 +91,15 @@ button:hover {
   font-weight: 600;
   font-size: 18px;
 }
+
+.obtainedScore {
+  color: #8a98f1;
+}
+
+.correct {
+  color: forestgreen;
+}
+
+.wrong {
+  color: red;
+}

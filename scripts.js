@@ -161,7 +161,7 @@ function submitQuiz() {
   const totalScore = totalQuestions;
 
   const resultText = document.getElementById("result-text");
-  resultText.innerHTML = `Correct: ${correctAnswers}<br>Wrong: ${wrongAnswers}<br>Unattempted: ${unattempted}<br>Obtained Score: ${obtainedScore} out of ${totalScore}`;
+  resultText.innerHTML = `<span class="correct">Correct: </span>${correctAnswers}<br><span class="wrong">Wrong: </span>${wrongAnswers}<br>Unattempted: ${unattempted}<br><p class="obtainedScore">Obtained Score: ${obtainedScore} / ${totalScore}</p>`;
   showStep("result");
   clearInterval(timer);
 }
