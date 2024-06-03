@@ -28,12 +28,14 @@ body {
 button {
   margin-top: 10px;
   margin-right: 20px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
   background-color: #8a98f1;
-  color: white;
+  color: #fff;
+  padding: 10px 40px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
+  border: none;
+  border-radius: 20px;
 }
 
 #quiz-container {
