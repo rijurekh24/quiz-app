@@ -119,18 +119,39 @@ function previousStep(step) {
 }
 
 function submitQuiz() {
-  let score = 0;
+  let correctAnswers = 0;
+  let wrongAnswers = 0;
+  let unattempted = 0;
+
   questions.forEach((question, index) => {
     const selectedOption = document.querySelector(
       `input[name="q${index + 1}"]:checked`
     );
-    if (selectedOption && selectedOption.value === question.answer) {
-      score++;
+    if (selectedOption) {
+      if (selectedOption.value === question.answer) {
+        correctAnswers++;
+        const nextSibling = selectedOption.nextElementSibling;
+        if (nextSibling) {
+          nextSibling.classList.add("correct");
+        }
+      } else {
+        wrongAnswers++;
+        const nextSibling = selectedOption.nextElementSibling;
+        if (nextSibling) {
+          nextSibling.classList.add("wrong");
+        }
+      }
+    } else {
+      unattempted++;
     }
   });
-  document.getElementById(
-    "result-text"
-  ).innerText = `You scored ${score} out of ${totalSteps}`;
+
+  const totalQuestions = questions.length;
+  const obtainedScore = correctAnswers;
+  const totalScore = totalQuestions;
+
+  const resultText = document.getElementById("result-text");
+  resultText.innerHTML = `Correct: ${correctAnswers}<br>Wrong: ${wrongAnswers}<br>Unattempted: ${unattempted}<br>Obtained Score: ${obtainedScore} out of ${totalScore}`;
   showStep("result");
 }
 
