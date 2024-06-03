@@ -1,6 +1,8 @@
 let currentStep = 1;
 let totalSteps = 0;
 let questions = [];
+let timer;
+let timeLeft = 300;
 
 function loadQuestions() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -14,13 +16,21 @@ function loadQuestions() {
       totalSteps = questions.length;
       generateQuizSteps();
       showStep(currentStep);
+      startTimer();
     })
     .catch((error) => console.error("Error loading questions:", error));
 }
 
 function generateQuizSteps() {
   const quizContainer = document.getElementById("quiz-container");
+  const quizz = document.getElementById("quizz");
+
   quizContainer.innerHTML = "";
+
+  const timerDiv = document.createElement("div");
+  timerDiv.id = "timer";
+  timerDiv.innerText = "Time Left: 05:00";
+  quizz.appendChild(timerDiv);
 
   questions.forEach((question, index) => {
     const stepDiv = document.createElement("div");
@@ -153,6 +163,7 @@ function submitQuiz() {
   const resultText = document.getElementById("result-text");
   resultText.innerHTML = `Correct: ${correctAnswers}<br>Wrong: ${wrongAnswers}<br>Unattempted: ${unattempted}<br>Obtained Score: ${obtainedScore} out of ${totalScore}`;
   showStep("result");
+  clearInterval(timer);
 }
 
 function restartQuiz() {
@@ -160,11 +171,28 @@ function restartQuiz() {
   document.querySelectorAll("input[type=radio]").forEach((input) => {
     input.checked = false;
   });
+  timeLeft = 30;
+  startTimer();
   showStep(currentStep);
 }
 
 function goToHomePage() {
   window.location.href = "index.html";
+}
+
+function startTimer() {
+  const timerDiv = document.getElementById("timer");
+  timer = setInterval(() => {
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      submitQuiz();
+    } else {
+      timeLeft--;
+      const minutes = String(Math.floor(timeLeft / 60)).padStart(2, "0");
+      const seconds = String(timeLeft % 60).padStart(2, "0");
+      timerDiv.innerText = `Time Left: ${minutes}:${seconds}`;
+    }
+  }, 1000);
 }
 
 if (window.location.pathname.endsWith("quiz.html")) {
