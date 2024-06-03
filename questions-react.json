@@ -1,0 +1,52 @@
+[
+    {
+        "question": "What is React?",
+        "options": [
+            "A JavaScript library for building user interfaces",
+            "A programming language",
+            "A database management system",
+            "A web browser"
+        ],
+        "answer": "A JavaScript library for building user interfaces"
+    },
+    {
+        "question": "Who developed React?",
+        "options": [
+            "Facebook",
+            "Google",
+            "Microsoft",
+            "Apple"
+        ],
+        "answer": "Facebook"
+    },
+    {
+        "question": "Which of the following is a React lifecycle method?",
+        "options": [
+            "componentDidRender",
+            "componentDidMount",
+            "componentWillUpdate",
+            "renderComponent"
+        ],
+        "answer": "componentDidMount"
+    },
+    {
+        "question": "What is JSX in React?",
+        "options": [
+            "JavaScript XML",
+            "JavaScript XHR",
+            "JavaScript Style eXtension",
+            "JavaScript Execute"
+        ],
+        "answer": "JavaScript XML"
+    },
+    {
+        "question": "What is the purpose of state in React?",
+        "options": [
+            "To store and manage data within a component",
+            "To define the initial properties of a component",
+            "To manage the appearance of a component",
+            "To control the behavior of child components"
+        ],
+        "answer": "To store and manage data within a component"
+    }
+]

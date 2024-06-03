@@ -1,0 +1,52 @@
+[
+    {
+        "question": "What does SQL stand for?",
+        "options": [
+            "Structured Query Language",
+            "Standard Query Language",
+            "Sequential Query Language",
+            "Structured Question Language"
+        ],
+        "answer": "Structured Query Language"
+    },
+    {
+        "question": "Which SQL keyword is used to retrieve data from a database table?",
+        "options": [
+            "SELECT",
+            "GET",
+            "RETRIEVE",
+            "FETCH"
+        ],
+        "answer": "SELECT"
+    },
+    {
+        "question": "Which SQL command is used to insert new data into a database table?",
+        "options": [
+            "ADD",
+            "INSERT INTO",
+            "PUT",
+            "CREATE"
+        ],
+        "answer": "INSERT INTO"
+    },
+    {
+        "question": "What is the result of the following SQL query: SELECT COUNT(*) FROM employees;",
+        "options": [
+            "Returns the total number of employees in the 'employees' table",
+            "Returns the number of distinct employee names in the 'employees' table",
+            "Returns the number of employees with non-null values in the 'employees' table",
+            "Returns the number of columns in the 'employees' table"
+        ],
+        "answer": "Returns the total number of employees in the 'employees' table"
+    },
+    {
+        "question": "Which SQL clause is used to specify a condition while retrieving data?",
+        "options": [
+            "WHERE",
+            "CONDITION",
+            "FILTER",
+            "LIMIT"
+        ],
+        "answer": "WHERE"
+    }
+]

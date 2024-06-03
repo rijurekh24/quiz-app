@@ -1,0 +1,52 @@
+[
+    {
+        "question": "What does CSS stand for?",
+        "options": [
+            "Computer Style Sheets",
+            "Cascading Style Sheets",
+            "Colorful Style Sheets",
+            "Creative Style Sheets"
+        ],
+        "answer": "Cascading Style Sheets"
+    },
+    {
+        "question": "Which CSS property controls the text size?",
+        "options": [
+            "text-size",
+            "font-size",
+            "text-style",
+            "font-style"
+        ],
+        "answer": "font-size"
+    },
+    {
+        "question": "What is the correct CSS syntax for making all the <p> elements bold?",
+        "options": [
+            "p {text-size: bold;}",
+            "p {font-weight: bold;}",
+            "p {style: bold;}",
+            "p {bold: text;}"
+        ],
+        "answer": "p {font-weight: bold;}"
+    },
+    {
+        "question": "Which CSS property is used to change the background color of an element?",
+        "options": [
+            "color",
+            "background-color",
+            "bgcolor",
+            "background"
+        ],
+        "answer": "background-color"
+    },
+    {
+        "question": "In CSS, what does the 'margin' property do?",
+        "options": [
+            "Controls the space between elements' borders",
+            "Controls the space between elements' content and its border",
+            "Controls the space between elements' padding and its border",
+            "Controls the space outside the elements' border"
+        ],
+        "answer": "Controls the space outside the elements' border"
+    }
+]

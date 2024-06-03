@@ -1,0 +1,52 @@
+[
+    {
+        "question": "What is Git?",
+        "options": [
+            "A version control system",
+            "A programming language",
+            "A text editor",
+            "A web browser"
+        ],
+        "answer": "A version control system"
+    },
+    {
+        "question": "What command is used to create a new Git repository?",
+        "options": [
+            "git init",
+            "git clone",
+            "git create",
+            "git new"
+        ],
+        "answer": "git init"
+    },
+    {
+        "question": "What command is used to stage changes for commit in Git?",
+        "options": [
+            "git push",
+            "git stage",
+            "git add",
+            "git commit"
+        ],
+        "answer": "git add"
+    },
+    {
+        "question": "What is the purpose of 'git pull'?",
+        "options": [
+            "To push changes to a remote repository",
+            "To revert changes in the working directory",
+            "To update the local repository with changes from the remote repository",
+            "To create a new branch"
+        ],
+        "answer": "To update the local repository with changes from the remote repository"
+    },
+    {
+        "question": "What is a 'merge conflict' in Git?",
+        "options": [
+            "An error that occurs when trying to push changes to a remote repository",
+            "A situation where multiple changes to the same file cannot be automatically reconciled",
+            "A command used to merge multiple branches into one",
+            "A warning message displayed when running 'git status'"
+        ],
+        "answer": "A situation where multiple changes to the same file cannot be automatically reconciled"
+    }
+]

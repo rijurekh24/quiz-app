@@ -1,0 +1,52 @@
+[
+    {
+        "question": "What is the result of the following expression: 5 + '3'?",
+        "options": [
+            "'53'",
+            "8",
+            "53",
+            "TypeError: Cannot mix types"
+        ],
+        "answer": "'53'"
+    },
+    {
+        "question": "What does the 'typeof' operator in JavaScript return for the null value?",
+        "options": [
+            "'object'",
+            "'null'",
+            "'undefined'",
+            "'number'"
+        ],
+        "answer": "'object'"
+    },
+    {
+        "question": "Which method is used to remove the last element from an array in JavaScript?",
+        "options": [
+            "pop()",
+            "push()",
+            "splice()",
+            "shift()"
+        ],
+        "answer": "pop()"
+    },
+    {
+        "question": "What is the output of the following code: console.log(2 + '2' - 1)?",
+        "options": [
+            "21",
+            "22",
+            "3",
+            "NaN"
+        ],
+        "answer": "21"
+    },
+    {
+        "question": "What is the purpose of the 'use strict' directive in JavaScript?",
+        "options": [
+            "To enable strict mode, which catches common coding errors and prevents certain actions",
+            "To define strict security policies for the code execution environment",
+            "To restrict the use of certain keywords and expressions",
+            "To enforce stricter type checking for function parameters and return values"
+        ],
+        "answer": "To enable strict mode, which catches common coding errors and prevents certain actions"
+    }
+]
