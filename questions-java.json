@@ -1,0 +1,17 @@
+[
+    {
+        "question": "What is the size of int variable in Java?",
+        "options": ["4 bytes", "8 bytes", "2 bytes", "1 byte"],
+        "answer": "4 bytes"
+    },
+    {
+        "question": "Which of the following is not a Java feature?",
+        "options": ["Object-oriented", "Use of pointers", "Portable", "Dynamic"],
+        "answer": "Use of pointers"
+    },
+    {
+        "question": "Which of these cannot be used for a variable name in Java?",
+        "options": ["identifier", "keyword", "variable", "none of the above"],
+        "answer": "keyword"
+    }
+]

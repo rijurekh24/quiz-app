@@ -31,9 +31,9 @@ body {
 .quiz-topic {
   background-color: rgb(239, 242, 245);
   margin: 12px 40px;
-  padding: 10px;
+  padding: 15px 10px;
   width: 300px;
-  height: 200px;
+  height: 190px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -53,12 +53,17 @@ button {
   border: none;
   margin-top: auto;
   border-radius: 20px;
+  transition: 0.4s;
+}
+
+button:hover {
+  background-color: #5f68a3;
 }
 
 .fa-brands,
 .fa-solid {
-  font-size: 80px;
-  margin-bottom: 15px;
+  font-size: 60px;
+  margin-bottom: 10px;
   margin-top: 20px;
 }
 

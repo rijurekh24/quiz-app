@@ -27,8 +27,8 @@ function generateQuizSteps() {
     stepDiv.className = "quiz-step";
     stepDiv.id = `step-${index + 1}`;
 
-    const questionHeader = document.createElement("h2");
-    questionHeader.innerText = `Question ${index + 1}/${questions.length}`;
+    const questionHeader = document.createElement("h3");
+    questionHeader.innerText = `Question: ${index + 1}/${questions.length}`;
     stepDiv.appendChild(questionHeader);
 
     const questionParagraph = document.createElement("p");
