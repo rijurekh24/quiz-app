@@ -2,7 +2,7 @@ let currentStep = 1;
 let totalSteps = 0;
 let questions = [];
 let timer;
-let timeLeft = 300;
+let timeLeft = 30;
 
 function loadQuestions() {
   const urlParams = new URLSearchParams(window.location.search);
