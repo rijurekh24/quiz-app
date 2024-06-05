@@ -2,7 +2,7 @@ let currentStep = 1;
 let totalSteps = 0;
 let questions = [];
 let timer;
-let timeLeft = 30;
+let timeLeft = 60;
 
 function loadQuestions() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -29,7 +29,7 @@ function generateQuizSteps() {
 
   const timerDiv = document.createElement("div");
   timerDiv.id = "timer";
-  timerDiv.innerText = "Time Left: 00:30";
+  timerDiv.innerText = "Time Left: 01:00";
   quizz.appendChild(timerDiv);
 
   questions.forEach((question, index) => {
@@ -69,12 +69,13 @@ function generateQuizSteps() {
       nextButton.innerText = "Next";
       nextButton.onclick = () => nextStep(index + 1);
       stepDiv.appendChild(nextButton);
-    } else {
-      const submitButton = document.createElement("button");
-      submitButton.innerText = "Submit";
-      submitButton.onclick = submitQuiz;
-      stepDiv.appendChild(submitButton);
     }
+
+    // Add submit button on each step
+    const submitButton = document.createElement("button");
+    submitButton.innerText = "Submit";
+    submitButton.onclick = submitQuiz;
+    stepDiv.appendChild(submitButton);
 
     quizContainer.appendChild(stepDiv);
   });
@@ -188,11 +189,10 @@ function restartQuiz() {
   document.querySelectorAll("input[type=radio]").forEach((input) => {
     input.checked = false;
   });
-  timeLeft = 30;
+  timeLeft = 60;
   startTimer();
   showStep(currentStep);
 
-  // Show the timer
   document.getElementById("timer").style.display = "block";
   const userInfoDiv = document.getElementById("user-info");
   if (userInfoDiv) {
