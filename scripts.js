@@ -29,7 +29,7 @@ function generateQuizSteps() {
 
   const timerDiv = document.createElement("div");
   timerDiv.id = "timer";
-  timerDiv.innerText = "Time Left: 05:00";
+  timerDiv.innerText = "Time Left: 00:30";
   quizz.appendChild(timerDiv);
 
   questions.forEach((question, index) => {
@@ -163,7 +163,24 @@ function submitQuiz() {
   const resultText = document.getElementById("result-text");
   resultText.innerHTML = `<span class="correct">Correct: </span>${correctAnswers}<br><span class="wrong">Wrong: </span>${wrongAnswers}<br>Unattempted: ${unattempted}<br><p class="obtainedScore">Obtained Score: ${obtainedScore} / ${totalScore}</p>`;
   showStep("result");
+
+  document.getElementById("timer").style.display = "none";
   clearInterval(timer);
+
+  const username = localStorage.getItem("userName");
+  const userDiv = document.createElement("div");
+  userDiv.id = "user-info";
+  const userName = document.createElement("span");
+  userName.id = "user-name";
+  userName.innerText = `${username}`;
+  const logoutButton = document.createElement("button");
+  logoutButton.id = "logout-button";
+  logoutButton.innerText = "Logout";
+  logoutButton.onclick = logout;
+
+  userDiv.appendChild(userName);
+  userDiv.appendChild(logoutButton);
+  document.getElementById("quizz").appendChild(userDiv);
 }
 
 function restartQuiz() {
@@ -174,6 +191,13 @@ function restartQuiz() {
   timeLeft = 30;
   startTimer();
   showStep(currentStep);
+
+  // Show the timer
+  document.getElementById("timer").style.display = "block";
+  const userInfoDiv = document.getElementById("user-info");
+  if (userInfoDiv) {
+    userInfoDiv.remove();
+  }
 }
 
 function goToHomePage() {
@@ -193,6 +217,11 @@ function startTimer() {
       timerDiv.innerText = `Time Left: ${minutes}:${seconds}`;
     }
   }, 1000);
+}
+
+function logout() {
+  localStorage.removeItem("username");
+  window.location.href = "index.html";
 }
 
 if (window.location.pathname.endsWith("quiz.html")) {

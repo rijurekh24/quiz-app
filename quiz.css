@@ -103,3 +103,13 @@ button:hover {
 .wrong {
   color: red;
 }
+
+#user-name {
+  color: #8a98f1;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#logout-button {
+  margin-left: 20px;
+}
