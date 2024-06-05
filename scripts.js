@@ -71,7 +71,6 @@ function generateQuizSteps() {
       stepDiv.appendChild(nextButton);
     }
 
-    // Add submit button on each step
     const submitButton = document.createElement("button");
     submitButton.innerText = "Submit";
     submitButton.onclick = submitQuiz;
