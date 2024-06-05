@@ -18,5 +18,51 @@ body {
   border-radius: 20px;
   flex-direction: column;
   background-color: white;
+  padding: 20px 0px;
+}
+
+h1 {
+  margin-bottom: 3%;
+  padding: 0;
+}
+
+button {
+  margin-top: 8%;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #8a98f1;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.4s;
+}
+
+button:hover {
+  background-color: #5f68a3;
+}
+
+input {
+  padding: 10px 5px;
+  max-width: 100%;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  color: #333858;
+  box-shadow: 1px 1px 1px #8a98f1 inset, -1px 0px 1px #8a98f1 inset;
+}
+
+.login {
+  background-color: #e7e8f3;
   padding: 20px;
+  border-radius: 20px;
+  margin-top: 3.4%;
+}
+
+svg {
+  border-radius: 20px;
+  margin-top: auto;
 }
