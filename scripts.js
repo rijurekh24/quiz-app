@@ -177,7 +177,7 @@ function restartQuiz() {
 }
 
 function goToHomePage() {
-  window.location.href = "index.html";
+  window.location.href = "home.html";
 }
 
 function startTimer() {

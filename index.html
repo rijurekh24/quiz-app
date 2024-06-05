@@ -4,61 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz app</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="https://kit.fontawesome.com/3f8256dd02.js" crossorigin="anonymous"></script>
+    <title>Quiz Home</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-    <div id="homepage-container">
+    <div id="home">
         <img src="https://t3.ftcdn.net/jpg/05/69/96/48/360_F_569964847_Wa3tNpPYRGABpplPGSFT3LLB7E2wU0jb.jpg" alt="logo"
-            style="width: 10%; position: relative; left: 20px;">
-        <div class="all-topic">
-            <h4 style="font-size: 19px;margin-bottom: 2%; color: #333;">Choose one from categories below & see how many
-                questions you
-                can answer correctly
-                out of 5 questions!</h4>
-            <div style="display: flex; justify-content: center; align-items: center;">
-                <div class="quiz-topic">
-                    <i class="fa-brands fa-html5"></i>
-                    <h3>HTML</h3>
-                    <button onclick="startQuiz('html')">Start Quiz</button>
-                </div>
-                <div class="quiz-topic">
-                    <i class="fa-brands fa-css3"></i>
-                    <h3>CSS</h3>
-                    <button onclick="startQuiz('css')">Start Quiz</button>
-                </div>
-                <div class="quiz-topic">
-                    <i class="fa-brands fa-js"></i>
-                    <h3>Javascript</h3>
-                    <button onclick="startQuiz('javascript')">Start Quiz</button>
-                </div>
-            </div>
-            <div style="display: flex; justify-content: center; align-items: center;">
-                <div class="quiz-topic">
-                    <i class="fa-brands fa-react"></i>
-                    <h3>React</h3>
-                    <button onclick="startQuiz('react')">Start Quiz</button>
-                </div>
-                <div class="quiz-topic">
-                    <i class="fa-solid fa-database"></i>
-                    <h3>SQL</h3>
-                    <button onclick="startQuiz('sql')">Start Quiz</button>
-                </div>
-                <div class="quiz-topic">
-                    <i class="fa-brands fa-git-alt"></i>
-                    <h3>Git</h3>
-                    <button onclick="startQuiz('git')">Start Quiz</button>
-                </div>
+            style="width: 15%; position: relative; left: 45%;">
+        <div style="display:  flex; justify-content: space-around; align-items: center;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/2048px-Square_-_black_simple.svg.png"
+                alt="" srcset="" style="width: 400px; height: 400px;">
+            <div>
+                <h1>Welcome to the Quiz</h1>
+                <form id="nameForm">
+                    <label for="userName">Enter your name:</label>
+                    <input type="text" id="userName" name="userName" required>
+                    <button type="submit">Start Quiz</button>
+                </form>
             </div>
         </div>
     </div>
     <script>
-        function startQuiz(topic) {
-            window.location.href = `quiz.html?topic=${topic}`;
-        }
+        document.getElementById('nameForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const userName = document.getElementById('userName').value;
+            localStorage.setItem('userName', userName);
+            window.location.href = 'home.html';
+        });
     </script>
 </body>
 
