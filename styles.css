@@ -18,7 +18,8 @@ body {
   border-radius: 20px;
   flex-direction: column;
   background-color: white;
-  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
 }
 
 h1 {
@@ -59,10 +60,8 @@ input {
   background-color: #e7e8f3;
   padding: 20px;
   border-radius: 20px;
-  margin-top: 3.4%;
 }
 
 svg {
   border-radius: 20px;
-  margin-top: auto;
 }
