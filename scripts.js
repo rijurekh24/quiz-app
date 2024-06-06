@@ -198,7 +198,7 @@ function submitQuiz() {
 
   const username = localStorage.getItem("userName");
   const userDiv = document.getElementById("user-info");
-  userDiv.innerHTML = ""; // Clear existing content
+  userDiv.innerHTML = "";
   const userName = document.createElement("span");
   userName.id = "user-name";
   userName.innerText = `${username}`;
