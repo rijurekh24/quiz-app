@@ -2,7 +2,7 @@ let currentStep = 1;
 let totalSteps = 0;
 let questions = [];
 let timer;
-let timeLeft = 6000;
+let timeLeft = 60;
 
 function loadQuestions() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -85,20 +85,48 @@ function generateQuizSteps() {
   resultDiv.className = "quiz-step";
   const resultHeader = document.createElement("h2");
   resultHeader.innerText = "Your Result";
-  resultDiv.appendChild(resultHeader);
+
+  const design = document.createElement("div");
+  design.id = "design";
+  const buttonDiv = document.createElement("div");
+  buttonDiv.id = "buttonDiv";
+  resultDiv.appendChild(design);
+
+  const lottieDiv = document.createElement("div");
+  lottieDiv.id = "lottie-container";
+  const lottiePlayer = document.createElement("dotlottie-player");
+  lottiePlayer.setAttribute(
+    "src",
+    "https://lottie.host/bfd396f3-51be-4e7e-bc26-513ff918c1c9/68IPZG0d8J.json"
+  );
+  lottiePlayer.setAttribute("background", "transparent");
+  lottiePlayer.setAttribute("speed", "1");
+  lottiePlayer.setAttribute("style", "width: 450px; height: 450px");
+  lottiePlayer.setAttribute("direction", "1");
+  lottiePlayer.setAttribute("playMode", "normal");
+  lottiePlayer.setAttribute("loop", "");
+  lottiePlayer.setAttribute("autoplay", "");
+  lottieDiv.appendChild(lottiePlayer);
+  design.appendChild(lottieDiv);
+
+  const resultTextDiv = document.createElement("div");
+  resultTextDiv.id = "result-text-container";
   const resultText = document.createElement("p");
+  resultTextDiv.appendChild(resultHeader);
   resultText.id = "result-text";
-  resultDiv.appendChild(resultText);
+  resultTextDiv.appendChild(resultText);
+  resultTextDiv.appendChild(buttonDiv);
+  design.appendChild(resultTextDiv);
 
   const restartButton = document.createElement("button");
   restartButton.innerText = "Restart";
   restartButton.onclick = restartQuiz;
-  resultDiv.appendChild(restartButton);
+  buttonDiv.appendChild(restartButton);
 
   const homeButton = document.createElement("button");
   homeButton.innerText = "Go to Homepage";
   homeButton.onclick = goToHomePage;
-  resultDiv.appendChild(homeButton);
+  buttonDiv.appendChild(homeButton);
 
   quizContainer.appendChild(resultDiv);
 }
@@ -170,6 +198,7 @@ function submitQuiz() {
 
   const username = localStorage.getItem("userName");
   const userDiv = document.getElementById("user-info");
+  userDiv.innerHTML = ""; // Clear existing content
   const userName = document.createElement("span");
   userName.id = "user-name";
   userName.innerText = `${username}`;
@@ -180,6 +209,7 @@ function submitQuiz() {
 
   userDiv.appendChild(userName);
   userDiv.appendChild(logoutButton);
+  userDiv.style.display = "block";
 }
 
 function restartQuiz() {
@@ -193,9 +223,7 @@ function restartQuiz() {
 
   document.getElementById("timer").style.display = "block";
   const userInfoDiv = document.getElementById("user-info");
-  if (userInfoDiv) {
-    userInfoDiv.remove();
-  }
+  userInfoDiv.style.display = "none";
 }
 
 function goToHomePage() {
@@ -224,4 +252,8 @@ function logout() {
 
 if (window.location.pathname.endsWith("quiz.html")) {
   loadQuestions();
+  const userDiv = document.createElement("div");
+  userDiv.id = "user-info";
+  userDiv.style.display = "none";
+  document.body.appendChild(userDiv);
 }
