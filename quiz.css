@@ -21,10 +21,10 @@ body {
   width: 90%;
   border-radius: 20px;
   background-color: white;
-  padding: 20px;
+  padding: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
 }
 
 button {
@@ -112,4 +112,16 @@ button:hover {
 
 #logout-button {
   margin-left: 20px;
+}
+
+#user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+#logout-button {
+  margin: 0 !important;
+  margin-left: 10px !important;
 }

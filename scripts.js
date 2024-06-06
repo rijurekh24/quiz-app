@@ -2,7 +2,7 @@ let currentStep = 1;
 let totalSteps = 0;
 let questions = [];
 let timer;
-let timeLeft = 60;
+let timeLeft = 6000;
 
 function loadQuestions() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -28,9 +28,10 @@ function generateQuizSteps() {
   quizContainer.innerHTML = "";
 
   const timerDiv = document.createElement("div");
+  const nav = document.getElementById("nav");
   timerDiv.id = "timer";
   timerDiv.innerText = "Time Left: 01:00";
-  quizz.appendChild(timerDiv);
+  nav.appendChild(timerDiv);
 
   questions.forEach((question, index) => {
     const stepDiv = document.createElement("div");
@@ -168,8 +169,7 @@ function submitQuiz() {
   clearInterval(timer);
 
   const username = localStorage.getItem("userName");
-  const userDiv = document.createElement("div");
-  userDiv.id = "user-info";
+  const userDiv = document.getElementById("user-info");
   const userName = document.createElement("span");
   userName.id = "user-name";
   userName.innerText = `${username}`;
@@ -180,7 +180,6 @@ function submitQuiz() {
 
   userDiv.appendChild(userName);
   userDiv.appendChild(logoutButton);
-  document.getElementById("quizz").appendChild(userDiv);
 }
 
 function restartQuiz() {
